@@ -1,0 +1,56 @@
+service: OrdersService
+
+frameworkVersion: ">=4"
+
+provider:
+  name: aws
+  runtime: dotnet9.0
+  region: us-east-1
+  environment:
+    ORDERS_TABLE: OrdersTable
+    # Se espera que las URLs/ARN de las colas sean proporcionados en el entorno
+    RECEIVED_QUEUE_URL: ${self:custom.queues.received}
+    INPROCESS_QUEUE_URL: ${self:custom.queues.inProcess}
+    COMPLETED_QUEUE_URL: ${self:custom.queues.completed}
+    CANCELLED_QUEUE_URL: ${self:custom.queues.cancelled}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:GetItem
+          Resource: arn:aws:dynamodb:${self:provider.region}:*:table/OrdersTable
+        - Effect: Allow
+          Action:
+            - sqs:SendMessage
+          Resource:
+            - ${self:custom.queues.receivedArn}
+            - ${self:custom.queues.inProcessArn}
+            - ${self:custom.queues.completedArn}
+            - ${self:custom.queues.cancelledArn}
+
+functions:
+  OrdersApi:
+    handler: OrdersService.Api::OrdersService.Api.LambdaEntryPoint::FunctionHandlerAsync
+    events:
+      - httpApi:
+          path: /orders
+          method: post
+
+custom:
+  queues:
+    # Estos valores se usan para las URLs o ARN de las colas en AWS
+    # En entorno local se deberán crear manualmente o mediante un script
+    received: arn:aws:sqs:${self:provider.region}:123456789012:ReceivedQueue
+    inProcess: arn:aws:sqs:${self:provider.region}:123456789012:InProcessQueue
+    completed: arn:aws:sqs:${self:provider.region}:123456789012:CompletedQueue
+    cancelled: arn:aws:sqs:${self:provider.region}:123456789012:CancelledQueue
+    receivedArn: arn:aws:sqs:${self:provider.region}:123456789012:ReceivedQueue
+    inProcessArn: arn:aws:sqs:${self:provider.region}:123456789012:InProcessQueue
+    completedArn: arn:aws:sqs:${self:provider.region}:123456789012:CompletedQueue
+    cancelledArn: arn:aws:sqs:${self:provider.region}:123456789012:CancelledQueue
+
+plugins:
+  - serverless-dotnet

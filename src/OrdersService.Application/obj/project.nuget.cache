@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "YxoIuGV/nSo=",
+  "success": true,
+  "projectFilePath": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/OrdersService.Application.csproj",
+  "expectedPackageFiles": [
+    "/Users/jhonf/.nuget/packages/awssdk.core/3.7.402.1/awssdk.core.3.7.402.1.nupkg.sha512",
+    "/Users/jhonf/.nuget/packages/awssdk.dynamodbv2/3.7.405.22/awssdk.dynamodbv2.3.7.405.22.nupkg.sha512"
+  ],
+  "logs": []
+}

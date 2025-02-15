@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrdersService.Domain\OrdersService.Domain.csproj" />
+    <ProjectReference Include="..\OrdersService.Application\OrdersService.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.405.22" />
+    <PackageReference Include="AWSSDK.Lambda" Version="3.7.411.38" />
+    <PackageReference Include="AWSSDK.SQS" Version="3.7.400.95" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

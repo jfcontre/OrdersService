@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "serverless-dotnet": "^1.6.1",
+    "serverless-offline": "^14.4.0"
+  }
+}

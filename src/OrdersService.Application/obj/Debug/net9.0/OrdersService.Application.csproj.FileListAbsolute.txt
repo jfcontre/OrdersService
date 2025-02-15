@@ -1,0 +1,15 @@
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/bin/Debug/net9.0/OrdersService.Application.deps.json
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/bin/Debug/net9.0/OrdersService.Application.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/bin/Debug/net9.0/OrdersService.Application.pdb
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/bin/Debug/net9.0/OrdersService.Domain.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/bin/Debug/net9.0/OrdersService.Domain.pdb
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.csproj.AssemblyReference.cache
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.AssemblyInfoInputs.cache
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.AssemblyInfo.cs
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.csproj.CoreCompileInputs.cache
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersSe.F98F015B.Up2Date
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/refint/OrdersService.Application.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.pdb
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/ref/OrdersService.Application.dll

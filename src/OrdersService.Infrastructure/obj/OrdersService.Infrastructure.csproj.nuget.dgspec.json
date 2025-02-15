@@ -1,0 +1,216 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/OrdersService.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/OrdersService.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/OrdersService.Application.csproj",
+        "projectName": "OrdersService.Application",
+        "projectPath": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/OrdersService.Application.csproj",
+        "packagesPath": "/Users/jhonf/.nuget/packages/",
+        "outputPath": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jhonf/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/OrdersService.Domain.csproj": {
+                "projectPath": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/OrdersService.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/OrdersService.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/OrdersService.Domain.csproj",
+        "projectName": "OrdersService.Domain",
+        "projectPath": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/OrdersService.Domain.csproj",
+        "packagesPath": "/Users/jhonf/.nuget/packages/",
+        "outputPath": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jhonf/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[3.7.405.22, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/OrdersService.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/OrdersService.Infrastructure.csproj",
+        "projectName": "OrdersService.Infrastructure",
+        "projectPath": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/OrdersService.Infrastructure.csproj",
+        "packagesPath": "/Users/jhonf/.nuget/packages/",
+        "outputPath": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jhonf/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/OrdersService.Application.csproj": {
+                "projectPath": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/OrdersService.Application.csproj"
+              },
+              "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/OrdersService.Domain.csproj": {
+                "projectPath": "/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/OrdersService.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[3.7.405.22, )"
+            },
+            "AWSSDK.Lambda": {
+              "target": "Package",
+              "version": "[3.7.411.38, )"
+            },
+            "AWSSDK.SQS": {
+              "target": "Package",
+              "version": "[3.7.400.95, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

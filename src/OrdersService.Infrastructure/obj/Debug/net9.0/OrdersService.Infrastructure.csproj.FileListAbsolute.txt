@@ -1,0 +1,17 @@
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/bin/Debug/net9.0/OrdersService.Infrastructure.deps.json
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/bin/Debug/net9.0/OrdersService.Infrastructure.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/bin/Debug/net9.0/OrdersService.Infrastructure.pdb
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/bin/Debug/net9.0/OrdersService.Application.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/bin/Debug/net9.0/OrdersService.Domain.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/bin/Debug/net9.0/OrdersService.Domain.pdb
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/bin/Debug/net9.0/OrdersService.Application.pdb
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.csproj.AssemblyReference.cache
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.AssemblyInfoInputs.cache
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.AssemblyInfo.cs
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersSe.583226FA.Up2Date
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/refint/OrdersService.Infrastructure.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.pdb
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/ref/OrdersService.Infrastructure.dll
