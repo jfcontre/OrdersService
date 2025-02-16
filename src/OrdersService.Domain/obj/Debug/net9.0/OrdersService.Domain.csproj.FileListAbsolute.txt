@@ -6,6 +6,7 @@
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/obj/Debug/net9.0/OrdersService.Domain.AssemblyInfoInputs.cache
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/obj/Debug/net9.0/OrdersService.Domain.AssemblyInfo.cs
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/obj/Debug/net9.0/OrdersService.Domain.csproj.CoreCompileInputs.cache
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/obj/Debug/net9.0/OrdersService.Domain.sourcelink.json
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/obj/Debug/net9.0/OrdersService.Domain.dll
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/obj/Debug/net9.0/refint/OrdersService.Domain.dll
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Domain/obj/Debug/net9.0/OrdersService.Domain.pdb

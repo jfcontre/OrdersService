@@ -8,6 +8,7 @@
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.AssemblyInfoInputs.cache
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.AssemblyInfo.cs
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.csproj.CoreCompileInputs.cache
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.sourcelink.json
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersSe.F98F015B.Up2Date
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/OrdersService.Application.dll
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Application/obj/Debug/net9.0/refint/OrdersService.Application.dll

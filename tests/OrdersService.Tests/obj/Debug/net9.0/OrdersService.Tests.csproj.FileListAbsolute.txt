@@ -102,6 +102,7 @@
 /Users/jhonf/Proyectos/Datamart/OrdersService/tests/OrdersService.Tests/obj/Debug/net9.0/OrdersService.Tests.AssemblyInfoInputs.cache
 /Users/jhonf/Proyectos/Datamart/OrdersService/tests/OrdersService.Tests/obj/Debug/net9.0/OrdersService.Tests.AssemblyInfo.cs
 /Users/jhonf/Proyectos/Datamart/OrdersService/tests/OrdersService.Tests/obj/Debug/net9.0/OrdersService.Tests.csproj.CoreCompileInputs.cache
+/Users/jhonf/Proyectos/Datamart/OrdersService/tests/OrdersService.Tests/obj/Debug/net9.0/OrdersService.Tests.sourcelink.json
 /Users/jhonf/Proyectos/Datamart/OrdersService/tests/OrdersService.Tests/obj/Debug/net9.0/OrdersSe.20D4C49E.Up2Date
 /Users/jhonf/Proyectos/Datamart/OrdersService/tests/OrdersService.Tests/obj/Debug/net9.0/OrdersService.Tests.dll
 /Users/jhonf/Proyectos/Datamart/OrdersService/tests/OrdersService.Tests/obj/Debug/net9.0/refint/OrdersService.Tests.dll

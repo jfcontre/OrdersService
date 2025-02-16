@@ -15,3 +15,4 @@
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/refint/OrdersService.Infrastructure.dll
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.pdb
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/ref/OrdersService.Infrastructure.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.sourcelink.json

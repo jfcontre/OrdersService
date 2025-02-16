@@ -51,3 +51,4 @@
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Api/obj/Debug/net9.0/OrdersService.Api.pdb
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Api/obj/Debug/net9.0/OrdersService.Api.genruntimeconfig.cache
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Api/obj/Debug/net9.0/ref/OrdersService.Api.dll
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Api/obj/Debug/net9.0/OrdersService.Api.sourcelink.json
