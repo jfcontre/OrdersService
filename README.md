@@ -22,7 +22,7 @@ Este proyecto es un microservicio **serverless** desarrollado en **.NET 9** que 
 ### 1. **Clonar el Repositorio**
 
 ```sh
- git clone https://github.com/tu-usuario/OrdersService.git
+ git clone https://github.com/jfcontre/OrdersService.git
  cd OrdersService
 ```
 
@@ -31,6 +31,13 @@ Este proyecto es un microservicio **serverless** desarrollado en **.NET 9** que 
 Para trabajar localmente con **LocalStack**, configura credenciales falsas en `~/.aws/credentials`:
 
 ```ini
+Archivo Config
+[local]
+aws_access_key_id = test
+aws_secret_access_key = test
+region = us-east-1
+
+Archivo Credentials
 [local]
 aws_access_key_id = test
 aws_secret_access_key = test
@@ -193,7 +200,7 @@ Si deseas contribuir, abre un **Pull Request** o reporta un problema en **Issues
 
 ## **Autor**
 
-Desarrollado por [Tu Nombre].
+Desarrollado por [Jhon F. Contreras].
 
 ---
 
