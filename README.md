@@ -121,7 +121,10 @@ Ejemplo de **respuesta**:
 }
 ```
 
-Si la orden es **Cancelada**, el campo `motivoCancelacion` es obligatorio.
+El campo `motivoCancelacion` es obligatorio.
+
+El campo `estado` es obligatorio.
+
 
 ---
 
