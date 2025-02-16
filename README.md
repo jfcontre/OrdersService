@@ -195,12 +195,6 @@ Para manejar alto volumen de solicitudes:
 
 ---
 
-## **Contribuciones**
-
-Si deseas contribuir, abre un **Pull Request** o reporta un problema en **Issues**.
-
----
-
 ## **Autor**
 
 Desarrollado por [Jhon F. Contreras].
