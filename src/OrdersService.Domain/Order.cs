@@ -35,17 +35,6 @@ namespace OrdersService.Domain
         }
 
         // Constructor sin parámetros requerido por DynamoDBContext
-        public Order() { }
-
-        // Método de fábrica para órdenes canceladas
-        public static Order CrearOrdenCancelada(Guid id, DateTime fechaRegistro, string descripcion, DateTime fechaEntrega, string motivoCancelacion)
-        {
-            if (string.IsNullOrWhiteSpace(motivoCancelacion))
-                throw new ArgumentException("El motivo de cancelación es obligatorio para órdenes canceladas.");
-
-            var order = new Order(id, fechaRegistro, descripcion, fechaEntrega, OrderState.Cancelada);
-            order.MotivoCancelacion = motivoCancelacion;
-            return order;
-        }
+        public Order() { }        
     }
 }

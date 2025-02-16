@@ -33,7 +33,7 @@ namespace OrdersService.Application.Commands
             
             if (string.IsNullOrWhiteSpace(command.MotivoCancelacion))
                 {
-                    throw new ArgumentException("El motivo de cancelación es obligatorio para órdenes canceladas.");
+                    throw new ArgumentException("El motivo de cancelación es obligatorio.");
                 }
             else
             {
