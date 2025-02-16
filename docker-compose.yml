@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  orderservice-api:
+    build:
+      context: .
+      dockerfile: src/OrdersService.Api/Dockerfile
+    ports:
+      - "5000:80"  # Mapea el puerto 80 del contenedor al 5000 de la máquina host
+    depends_on:
+      - dynamodb
+      - localstack
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      # Variables para que la API se comunique con los contenedores
+      - DynamoDB__ServiceURL=http://dynamodb:8000
+      - SQS__ServiceURL=http://localstack:4566
+
+  dynamodb:
+    image: amazon/dynamodb-local
+    container_name: dynamodb
+    ports:
+      - "8000:8000"
+
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    ports:
+      - "4566:4566"
+      - "4571:4571"
+    environment:
+      - SERVICES=sqs
+      - DEFAULT_REGION=us-east-1
