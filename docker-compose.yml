@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: src/OrdersService.Api/Dockerfile
     ports:
-      - "5000:80"  # Mapea el puerto 80 del contenedor al 5000 de la máquina host
+      - "8080:8080"  # Mapea el puerto 80 del contenedor al 5000 de la máquina host
     depends_on:
       - dynamodb
       - localstack
@@ -15,6 +15,10 @@ services:
       # Variables para que la API se comunique con los contenedores
       - DynamoDB__ServiceURL=http://dynamodb:8000
       - SQS__ServiceURL=http://localstack:4566
+    command: >
+      /bin/bash -c "until curl -s http://dynamodb:8000; do echo 'Esperando a DynamoDB...'; sleep 2; done;
+      until curl -s http://localstack:4566; do echo 'Esperando a LocalStack...'; sleep 2; done;
+      dotnet run --project src/OrdersService.Api"
 
   dynamodb:
     image: amazon/dynamodb-local
@@ -29,5 +33,7 @@ services:
       - "4566:4566"
       - "4571:4571"
     environment:
-      - SERVICES=sqs
+      - SERVICES=sqs,dynamodb
       - DEFAULT_REGION=us-east-1
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"  # Permite a LocalStack interactuar con Docker

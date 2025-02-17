@@ -14,6 +14,7 @@ Este proyecto es un microservicio **serverless** desarrollado en **.NET 9** que 
 - **LocalStack** (Para pruebas locales de servicios AWS)
 - **Serverless Framework** (Infraestructura como código - IaC)
 - **Docker & Docker Compose** (Para entorno de pruebas local)
+- **AWS CLI** (Interactuar con servicios AWS)
 
 ---
 
@@ -28,91 +29,156 @@ Este proyecto es un microservicio **serverless** desarrollado en **.NET 9** que 
 
 ### 2. **Instalar AWS CLI**
 
-Para gestionar los recursos de AWS localmente, instala **AWS CLI** siguiendo las instrucciones en [AWS CLI Installation](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+Para gestionar recursos de AWS y emulaciones en LocalStack, instala **AWS CLI**:
 
-Verifica la instalación ejecutando:
+- [Guía de instalación oficial](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 
-```sh
+Verifica la instalación:
+
+```bash
 aws --version
-```
-
-### 3. **Configurar Credenciales de AWS**
-
-Para trabajar localmente con **LocalStack**, configura credenciales falsas en `~/.aws/credentials`:
-
-```ini
-Archivo Config
-[local]
-aws_access_key_id = test
-aws_secret_access_key = test
-region = us-east-1
-
-Archivo Credentials
-[local]
-aws_access_key_id = test
-aws_secret_access_key = test
-region = us-east-1
 ```
 
 ---
 
-### 4. **Levantar el Entorno Local con Docker**
+### 3. **Configurar Credenciales de AWS**
 
-El `docker-compose.yml` se encarga de levantar **DynamoDB y LocalStack**.
+Para trabajar localmente con **LocalStack**, configura credenciales dummy:
+
+**Archivo Credentials (`~/.aws/credentials`):**
+```ini
+[local]
+aws_access_key_id = test
+aws_secret_access_key = test
+region = us-east-1
+```
+
+**Archivo Config (`~/.aws/config`):**
+```ini
+[profile local]
+region = us-east-1
+output = json
+```
+
+Luego, exporta el perfil:
+
+```sh
+export AWS_PROFILE=local
+```
+
+---
+
+## Levantar el Entorno Local con Docker
+
+El archivo `docker-compose.yml` se encarga de levantar **DynamoDB**, **LocalStack**, y la **API**. Asegúrate de que en tu `docker-compose.yml` tengas un mapeo de puertos, por ejemplo:
+
+```yaml
+services:
+  orderservice-api:
+    build:
+      context: .
+      dockerfile: src/OrdersService.Api/Dockerfile
+    ports:
+      - "8080:8080"  # Mapea el puerto 80 del contenedor al 8080 de la máquina host
+    depends_on:
+      - dynamodb
+      - localstack
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  dynamodb:
+    image: amazon/dynamodb-local
+    ports:
+      - "8000:8000"
+
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566"
+      - "4571:4571"
+    environment:
+      - SERVICES=sqs
+      - DEFAULT_REGION=us-east-1
+```
+
+Para iniciar todos los servicios, ejecuta:
 
 ```sh
 docker-compose up -d
 ```
 
-Verifica que los contenedores estén corriendo:
+Verifica que los contenedores están corriendo:
 
 ```sh
 docker ps
 ```
 
----
+### Ingresar al contenedor LocalStack
 
-### 5. **Crear las Colas de SQS Manualmente**
-
-Ejecuta los siguientes comandos para crear las colas en LocalStack:
-
+Para crear colas y otros recursos **dentro** del contenedor LocalStack, primero confirma que el contenedor está en ejecución:
 ```sh
-aws --endpoint-url=http://localhost:4566 sqs create-queue --queue-name ReceivedQueue
-aws --endpoint-url=http://localhost:4566 sqs create-queue --queue-name InProcessQueue
-aws --endpoint-url=http://localhost:4566 sqs create-queue --queue-name CompletedQueue
-aws --endpoint-url=http://localhost:4566 sqs create-queue --queue-name CancelledQueue
+docker ps
 ```
-
-Verifica que se hayan creado correctamente:
-
-```sh
-aws --endpoint-url=http://localhost:4566 sqs list-queues
+Si deseas acceder a la terminal del contenedor, ejecuta:
+```bash
+docker exec -it <nombre_o_id_del_contenedor_localstack> /bin/bash
 ```
+Una vez dentro del contenedor, podrás usar los comandos **AWS CLI** con las credenciales dummy.
 
 ---
 
-### 6. **Ejecutar la API en Local**
+### Crear las Colas de SQS Manualmente en LocalStack
 
+Tienes dos opciones:
+
+**Opción A: Ejecutar los comandos desde tu máquina host** (con `--endpoint-url` y perfil local):
+```sh
+aws --endpoint-url=http://localhost:4566 sqs create-queue --queue-name ReceivedQueue --profile local
+aws --endpoint-url=http://localhost:4566 sqs create-queue --queue-name InProcessQueue --profile local
+aws --endpoint-url=http://localhost:4566 sqs create-queue --queue-name CompletedQueue --profile local
+aws --endpoint-url=http://localhost:4566 sqs create-queue --queue-name CancelledQueue --profile local
+```
+
+**Opción B: Ingresar al contenedor LocalStack** y ejecutar comandos AWS CLI:
+```sh
+docker exec -it <container_name> /bin/bash
+# Ya dentro del contenedor:
+aws sqs create-queue --queue-name ReceivedQueue
+aws sqs create-queue --queue-name InProcessQueue
+aws sqs create-queue --queue-name CompletedQueue
+aws sqs create-queue --queue-name CancelledQueue
+```
+
+Verifica las colas:
+```sh
+aws sqs list-queues
+```
+
+---
+
+## Ejecutar la API en Local
+
+Si quieres levantar únicamente la API, sin Docker:
 ```sh
 dotnet run --project src/OrdersService.Api
 ```
 
 La API estará disponible en:
+```
+http://localhost:8080/swagger/index.html
+```
 
-```
-http://localhost:5022/swagger/index.html
-```
+(o el puerto que hayas mapeado en `docker-compose.yml`)
 
 ---
 
-## **Uso de la API**
+## Uso de la API
 
 La API expone un **endpoint REST** para manejar órdenes de trabajo:
 
-### **Crear una Orden (POST /orders)**
+### Crear una Orden (POST /orders)
 
-Ejemplo de **request**:
-
+Ejemplo de request:
 ```json
 {
   "descripcion": "Reparación de pantalla",
@@ -123,65 +189,37 @@ Ejemplo de **request**:
 }
 ```
 
-Ejemplo de **respuesta**:
-
+Ejemplo de respuesta:
 ```json
 {
   "id": "123e4567-e89b-12d3-a456-426614174000"
 }
 ```
 
-El campo `motivoCancelacion` es obligatorio.
-
-El campo `estado` es obligatorio.
+El campo `motivoCancelacion` es obligatorio. El campo `estado` es obligatorio.
 
 ---
 
-## **Pruebas Unitarias**
+## Pruebas Unitarias
 
 Ejecuta las pruebas unitarias desde el directorio `tests/OrdersService.Tests/`:
-
 ```sh
 cd tests/OrdersService.Tests/
 dotnet test
 ```
 
 Para ver la cobertura de pruebas:
-
 ```sh
 dotnet test --collect:"XPlat Code Coverage"
 ```
 
 ---
 
-## **Despliegue con Serverless Framework**
-
-1. Instala Serverless Framework:
-
-```sh
-npm install -g serverless
-```
-
-2. Ejecuta el despliegue en AWS:
-
-```sh
-serverless deploy
-```
-
-3. Verifica el **API Gateway** generado:
-
-```sh
-serverless info
-```
-
----
-
-## **Manejo de Errores**
+## Manejo de Errores
 
 Se implementó un middleware global para capturar errores y retornar respuestas estandarizadas en formato JSON.
 
 Ejemplo de error controlado:
-
 ```json
 {
   "error": {
@@ -193,26 +231,40 @@ Ejemplo de error controlado:
 
 ---
 
-## **Escalabilidad y Optimización**
-
-Para manejar alto volumen de solicitudes:
-
-- Se usa **SQS para procesamiento asíncrono**.
-- Se pueden utilizar **colas FIFO** para garantizar el orden.
-- **Step Functions** permite dividir el procesamiento en pasos eficientes.
-- Se puede configurar **Auto Scaling** en AWS Lambda.
+## Despliegue con Serverless Framework
+1. Instala Serverless Framework:
+```sh
+npm install -g serverless
+```
+2. Ejecuta el despliegue en AWS:
+```sh
+serverless deploy
+```
+3. Verifica el API Gateway generado:
+```sh
+serverless info
+```
 
 ---
 
-## **Autor**
+## Escalabilidad y Optimización
 
+Para manejar alto volumen de solicitudes:
+- Se usa **SQS** para procesamiento asíncrono.
+- Se pueden utilizar **colas FIFO** para garantizar el orden.
+- **Step Functions** para dividir el procesamiento en pasos.
+- Configurar **Auto Scaling** en AWS Lambda.
+
+---
+
+## Autor
 Desarrollado por [Jhon F. Contreras].
 
 ---
 
-## **Licencia**
-
+## Licencia
 MIT License.
 
 
 By JhonFC
+
