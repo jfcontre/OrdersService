@@ -26,7 +26,17 @@ Este proyecto es un microservicio **serverless** desarrollado en **.NET 9** que 
  cd OrdersService
 ```
 
-### 2. **Configurar Credenciales de AWS**
+### 2. **Instalar AWS CLI**
+
+Para gestionar los recursos de AWS localmente, instala **AWS CLI** siguiendo las instrucciones en [AWS CLI Installation](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+
+Verifica la instalación ejecutando:
+
+```sh
+aws --version
+```
+
+### 3. **Configurar Credenciales de AWS**
 
 Para trabajar localmente con **LocalStack**, configura credenciales falsas en `~/.aws/credentials`:
 
@@ -46,7 +56,7 @@ region = us-east-1
 
 ---
 
-### 3. **Levantar el Entorno Local con Docker**
+### 4. **Levantar el Entorno Local con Docker**
 
 El `docker-compose.yml` se encarga de levantar **DynamoDB y LocalStack**.
 
@@ -62,7 +72,7 @@ docker ps
 
 ---
 
-### 4. **Crear las Colas de SQS Manualmente**
+### 5. **Crear las Colas de SQS Manualmente**
 
 Ejecuta los siguientes comandos para crear las colas en LocalStack:
 
@@ -81,7 +91,7 @@ aws --endpoint-url=http://localhost:4566 sqs list-queues
 
 ---
 
-### 5. **Ejecutar la API en Local**
+### 6. **Ejecutar la API en Local**
 
 ```sh
 dotnet run --project src/OrdersService.Api
@@ -124,7 +134,6 @@ Ejemplo de **respuesta**:
 El campo `motivoCancelacion` es obligatorio.
 
 El campo `estado` es obligatorio.
-
 
 ---
 
@@ -204,7 +213,6 @@ Desarrollado por [Jhon F. Contreras].
 ## **Licencia**
 
 MIT License.
-
 
 
 By JhonFC
