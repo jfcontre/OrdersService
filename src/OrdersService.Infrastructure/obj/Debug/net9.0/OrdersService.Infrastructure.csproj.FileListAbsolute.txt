@@ -10,9 +10,9 @@
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.AssemblyInfoInputs.cache
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.AssemblyInfo.cs
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.sourcelink.json
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersSe.583226FA.Up2Date
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.dll
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/refint/OrdersService.Infrastructure.dll
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.pdb
 /Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/ref/OrdersService.Infrastructure.dll
-/Users/jhonf/Proyectos/Datamart/OrdersService/src/OrdersService.Infrastructure/obj/Debug/net9.0/OrdersService.Infrastructure.sourcelink.json

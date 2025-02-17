@@ -8,7 +8,7 @@ RUN dotnet restore
 
 # Copia el resto del código y compila en modo Release
 COPY . .
-RUN dotnet publish -c Release -o /app/publish
+RUN dotnet publish OrdersService.sln -c Release -o /app/publish
 
 # Etapa final: se utiliza la imagen de runtime para ejecutar la aplicación
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
