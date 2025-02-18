@@ -18,6 +18,33 @@ Este proyecto es un microservicio **serverless** desarrollado en **.NET 9** que 
 
 ---
 
+## Arquitectura y Patrones
+
+Este proyecto aplica los siguientes patrones y principios:
+
+1. **Clean Architecture (Arquitectura Limpia)**  
+   - Separación en capas (Core Domain, Application, Infrastructure) que evita dependencias circulares.  
+   - Permite que las capas de dominio y aplicación no dependan de ningún framework o tecnología externa.
+
+2. **Domain-Driven Design (DDD)**  
+   - El núcleo del negocio está representado en la capa de dominio mediante entidades y agregados (por ejemplo, `Order`, `OrderState`).  
+   - Se utilizan `Value Objects`, `Entities` y `Repositories` para encapsular la lógica y persistencia del dominio.
+
+3. **SOLID**  
+   - Se prioriza la responsabilidad única (Single Responsibility) en las clases de la aplicación.  
+   - La `IOrderRepository` y `IQueuePublisher` ilustran principios como la Inversión de Dependencias (D) y la Segregación de Interfaces (I).
+
+4. **CQRS (Command Query Responsibility Segregation)**  
+   - Se separan las operaciones de escritura (Commands) de las de lectura (Queries).  
+   - La clase `CreateOrderCommandHandler` ilustra la lógica de escritura para procesar una orden.
+
+5. **Inversión de Dependencias**  
+   - Se emplea la inyección de dependencias a través de interfaces (`IOrderRepository`, `IQueuePublisher`) para desacoplar la aplicación de la infraestructura concreta.
+
+En conjunto, estos patrones aseguran que el sistema sea **flexible**, **mantenible** y **fácil de probar**. La organización del código facilita la evolución y nuevas funcionalidades sin quebrar la estructura base.
+
+---
+
 ## Instalación y Configuración
 
 ### 1. **Clonar el Repositorio**
@@ -264,7 +291,6 @@ Desarrollado por [Jhon F. Contreras].
 
 ## Licencia
 MIT License.
-
 
 By JhonFC
 
